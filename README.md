@@ -29,16 +29,16 @@
 8.	自动将数据文件缩小到最低8kb的增量。
 
 我建议在以下构造中复制逻辑并创建3个：
-###Job1:
+### Job1:
 备份全部数据库
 步骤1.删除旧的完整备份
 步骤2.运行完整数据库备份
-###Job2:
+### Job2:
 备份TLOG所有数据库
 步骤1.删除旧的事务日志备份
 步骤2.运行事务日志备份
 步骤3.压缩事务日志数据文件
-###Job3:
+### Job3:
 数据库维护
 步骤1.运行DBCC CheckDB
 步骤2.压缩数据文件
@@ -61,23 +61,22 @@ The following SQL logic will perform the following actions.
 
 > I recommend copying the logic and creating 3  in the following construct:
 
-###Job1:
+### Job1:
 DATABASE BACKUP FULL ALL DATABASES
 Step 1. Delete old full backups.
 Step 2. Run Full Database Backups
-###Job2:
+### Job2:
 DATABASE BACKUP TLOG ALL DATABASES
 Step 1. Delete old transaction log backups.
 Step 2. Run Transaction Log Backups.
 Step 3. Shrink Transaction Log Data Files.
-###Job3:
+### Job3:
 DATABASE MAINTENANCE
 Step 1. Run DBCC CheckDB
 Step 2. Shrink Data Files.
 
 You will need to ensure the SQL Service Account has the appropriate rights on the network share to create Folders and Files.
 Hope this is useful.
-
 
 
 ---
